@@ -1,0 +1,43 @@
+<% if @admin %>
+  <div class="form-group">
+    <div class= "col-md-6 col-md-offset-3">
+      <h1 class="extra-padding-top">Sign in!</h1>    
+      <%= form_for(:session, url: sessions_path) do |f| %>
+      
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+
+        <%= f.label :student_id, "Student ID"%>
+        <%= f.text_field :student_id, class: "form-control" %>
+  
+        <%= f.label :birthdate, "Birthday (MMDDYY)" %>
+        <%= f.text_field :birthdate, class: "form-control" %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control extra-padding-bot" %>
+      
+        <%= hidden_field_tag :user, "admin" %>
+        <%= f.submit "Sign In!", class: "btn btn-large btn-primary spacing" %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+
+  <div class="form-group">
+    <div class= "col-md-6 col-md-offset-3">
+        <h1 class="extra-padding-top">Sign in!</h1>
+        <%= form_for(:session, url: sessions_path) do |f| %>
+  
+          <%= f.label :student_id, "Student ID" %>
+          <%= f.text_field :student_id, class: "form-control" %>
+  
+          <%= f.label :password, "Date of birth (MMDDYY)" %>
+          <%= f.password_field :password, class: "form-control extra-padding-bot" %>
+      
+          <%= hidden_field_tag :user, "student" %>
+          <%= f.submit "Sign In!", class: "btn btn-large btn-primary spacing" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

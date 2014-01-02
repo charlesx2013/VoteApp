@@ -1,0 +1,27 @@
+<div class= "col-md-6 col-md-offset-3 extra-padding-top">
+  <h1> ASB Positions! </h1>
+  <% @position_asb.each do |pos| %>
+  <table class="table">
+    <h3> <%= pos.name %> </h3>
+    <tr>
+      <th> Candidates </th>
+      <th> Number of Votes</th>
+      <th> Percentage of Votes </th>
+    </tr>
+    <% pos.candidates.each do |candid| %>
+      <tr>
+        <td> <%= candid.name %> </td>
+        <td> <%= candid.votes.length %> </td>
+        <td> <%= candid.percentage %> </td>
+      </tr>
+    <% end %>
+    <h3> Winner: </h3>
+    <% pos.winner do |candid| %>
+      <tr>
+        <td> <%= candid.name %> </td>
+      </tr>
+    <% end %>
+  </table>
+  <% end %>
+  <h1> Congratulations! </h1>
+</div>

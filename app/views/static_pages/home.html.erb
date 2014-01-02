@@ -1,0 +1,35 @@
+<% if signed_in_student? %>
+  <div class= "center jumbotron">
+    
+    <% if asb? %>
+      <h3> Welcome, <%= current_user.name%>!</h3> 
+      <%= link_to "Vote for ASB", new_vote_path(type: "asb"), class: "btn btn-large btn-info" %> 
+    <% end %>
+    <% if class? %>
+      <h3> Welcome, <%= current_user.name%>!</h3> 
+      <%= link_to "Vote for Class", new_vote_path(type: "class"), class: "btn btn-large btn-info" %> 
+    <% end %>
+    <% if neither? or underclass? %> 
+      <h3>You're all done! Results will be released shortly</h3> 
+    <% end %> 
+    <%= link_to "Sign out", signout_path, method: "delete", class: "btn btn-large btn-info" %>
+  </div>
+<% elsif signed_in_admin? %>
+  <div class = "center jumbotron">
+    <h1> Welcome to the Admin Dashboard! </h1>
+    <%= link_to "Edit your infomation", edit_admin_path(current_user), class: "btn btn-large btn-info" %>
+    <%= link_to "Create a new Admin!", new_admin_path, class: "btn btn-large btn-info" %>
+    <%= link_to "Add new Students!", new_student_path, class: "btn btn-large btn-info" %>
+    <%= link_to "Create a new Position!", new_position_path, class: "btn btn-large btn-info" %>
+    <%= link_to "Add new Candidates!", new_candidate_path, class: "btn btn-large btn-info" %>
+    <%= link_to "View Results", results_path, class: "btn btn-large btn-info" %>
+    <%= link_to "Sign Out!", signout_path, method: "delete", class: "btn btn-large btn-info" %>
+  </div>
+
+<% else %>
+  <div class= "center jumbotron">
+    <h1> Vote! </h1>
+    <%= link_to "Student Sign in Here!", signin_path(user: "student"), class: "btn btn-large btn-info" %>
+    <%= link_to "Admin Sign in Here!", signin_path(user: "admin"), class: "btn btn-small btn-info" %>
+  </div>
+<% end %>

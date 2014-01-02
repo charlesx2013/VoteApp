@@ -1,0 +1,18 @@
+<div class="form-group">
+  <div class= "col-md-6 col-md-offset-3">
+    <h1 class="extra-padding-top">Create a New Position!</h1> 
+
+      <%= form_for(@position) do |f| %>
+  
+      <%= render 'shared/error_messages', object: f.object %>
+  
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control"  %>
+      
+      <%=f.label :position_type %>
+      <%= f.select(:position_type, options_for_select(%w[asb class]), { prompt: true }, class: "form-control extra-padding-bot") %>
+  
+      <%= f.submit "Create Position!", class: "btn btn-large btn primary" %>
+    <% end %> 
+  </div>
+</div>

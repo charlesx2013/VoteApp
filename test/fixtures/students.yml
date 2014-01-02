@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  grade: MyString
+  student_id: MyString
+  password_digest: MyString
+  class_vote: false
+  asb_vote: false
+
+two:
+  name: MyString
+  grade: MyString
+  student_id: MyString
+  password_digest: MyString
+  class_vote: false
+  asb_vote: false

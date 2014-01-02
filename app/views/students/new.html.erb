@@ -1,0 +1,23 @@
+<div class="form-group">
+  <div class= "col-md-6 col-md-offset-3">
+    <h1 class="extra-padding-top">Register a student!</h1>  
+    <%= form_for(@student) do |f| %>
+  
+      <%= render 'shared/error_messages', object: f.object %>
+  
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+  
+      <%= f.label :student_id, "Student ID (8 digits) " %>
+      <%= f.text_field :student_id, placeholder: "(Ex: 12345678)", class: "form-control" %>
+  
+      <%= f.label :password, "Birthdate" %>
+      <%= f.text_field :password, placeholder: "MMDDYY", class: "form-control" %>
+  
+      <%= f.label :grade %>
+      <%= f.select(:grade, options_for_select(%w[7 8 9 10 11 12]), { prompt: true }, class: "form-control extra-padding-bot") %>
+  
+      <%= f.submit "Register Student!", class: "btn btn-large btn primary", confirm: "Are you sure Student Information is correct?" %>
+    <% end %> 
+  </div>
+</div>

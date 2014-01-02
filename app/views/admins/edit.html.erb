@@ -1,0 +1,27 @@
+<div class="form-group">
+  <div class= "col-md-6 col-md-offset-3">
+    <h1 class="extra-padding-top">Edit your Information!</h1> 
+    <%= form_for(@admin) do |f| %>
+  
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :birthdate %>
+      <%= f.text_field :birthdate, placeholder: "MMDDYY", class: "form-control" %>
+
+      <%= f.label :student_id, "Student ID (8 digits) " %>
+      <%= f.text_field :student_id, placeholder: "(Ex: 12345678)", class: "form-control" %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: "form-control extra-padding-bot" %>
+
+      <%= f.submit "Save Changes!", class: "btn btn-large btn primary" %>
+    <% end %> 
+  </div>
+</div> 
+

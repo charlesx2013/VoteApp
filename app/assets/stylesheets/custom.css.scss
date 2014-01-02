@@ -1,0 +1,85 @@
+@import "bootstrap";
+
+$grayLight: #999;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.center {
+  text-align: center;
+  h1 { 
+  margin-bottom: 50px;
+  }
+  
+}
+
+.home-link {
+  margin: 8px 0px 0px 10px;
+}
+
+#navbar-options {
+  background-color: black;
+  margin-bottom: -10px;
+}
+
+
+
+.test {
+  text-align: center
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  letter-spacing: -1px;
+  padding-top: 5px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+
+#center-box {
+  position: absolute;
+  height: 200px;
+  width: 400px;
+  margin: -100px 0 0 -200px;
+  top: 50%;
+  left: 50%;
+}
+
+.debug_dump {
+
+  clear: both;
+  float: left; 
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+  
+}
+
+.extra-padding-top {
+  padding-top: 10px;
+}
+
+.extra-padding-bot {
+  margin-bottom: 10px;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
