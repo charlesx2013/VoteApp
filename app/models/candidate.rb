@@ -18,8 +18,7 @@ class Candidate < ActiveRecord::Base
     num = self.votes.length
     num ||= 0
     denom = Vote.where(position_id: self.position_id).length
-    denom = 10 if denom ==0
-    total = (num/1) * 100
-    return "#{total}%"
+    denom = 10 if denom == 0
+    return "#{(num/denom) * 100}%"
   end
 end
